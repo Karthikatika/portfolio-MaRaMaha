@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Image Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff9f1c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #ff6b35;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        
+        .info-box {
+            background: #fff5f0;
+            border-left: 4px solid #ff6b35;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .info-box p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .image-card {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .image-card:hover {
+            border-color: #ff6b35;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-card h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .image-card .dimensions {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+        
+        .image-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff9f1c 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .image-card a:hover {
+            transform: scale(1.05);
+        }
+        
+        .instructions {
+            background: #fff9e6;
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .instructions h2 {
+            color: #f59e0b;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            color: #444;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .alternatives {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0fdf4;
+            border-radius: 12px;
+            border: 2px solid #34d399;
+        }
+        
+        .alternatives h2 {
+            color: #059669;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .alternatives ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .alternatives li {
+            color: #444;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .alternatives li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34d399;
+            font-weight: bold;
+        }
+        
+        .alternatives a {
+            color: #059669;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .alternatives a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Placeholder Image Helper</h1>
+        <p class="subtitle">Generate temporary placeholder images for your portfolio</p>
+        
+        <div class="info-box">
+            <p><strong>Note:</strong> This page helps you create placeholder images while you prepare your actual portfolio images.</p>
+            <p>Click the buttons below to open placeholder image generators in new tabs. Right-click the generated images and save them to the <code>assets</code> folder.</p>
+        </div>
+        
+        <div class="images-grid">
+            <div class="image-card">
+                <h3>Profile Picture</h3>
+                <p class="dimensions">800 × 800 px</p>
+                <a href="https://placehold.co/800x800/ff6b35/ffffff?text=Profile+Picture" target="_blank">Generate Image</a>
+            </div>
+            
+            <div class="image-card">
+                <h3>Project 1</h3>
+                <p class="dimensions">1200 × 900 px</p>
+                <a href="https://placehold.co/1200x900/ff6b35/ffffff?text=RR+Golden+Properties" target="_blank">Generate Image</a>
+            </div>
+            
+            <div class="image-card">
+                <h3>Project 2</h3>
+                <p class="dimensions">1200 × 900 px</p>
+                <a href="https://placehold.co/1200x900/ff9f1c/ffffff?text=RR+Royal+Paradise" target="_blank">Generate Image</a>
+            </div>
+            
+            <div class="image-card">
+                <h3>Project 3</h3>
+                <p class="dimensions">1200 × 900 px</p>
+                <a href="https://placehold.co/1200x900/f59e0b/ffffff?text=Social+Media+Reels" target="_blank">Generate Image</a>
+            </div>
+            
+            <div class="image-card">
+                <h3>Project 4</h3>
+                <p class="dimensions">1200 × 900 px</p>
+                <a href="https://placehold.co/1200x900/ff8c42/ffffff?text=YouTube+Videos" target="_blank">Generate Image</a>
+            </div>
+            
+            <div class="image-card">
+                <h3>Project 5</h3>
+                <p class="dimensions">1200 × 900 px</p>
+                <a href="https://placehold.co/1200x900/ffa726/ffffff?text=Meta+Ads" target="_blank">Generate Image</a>
+            </div>
+            
+            <div class="image-card">
+                <h3>Project 6</h3>
+                <p class="dimensions">1200 × 900 px</p>
+                <a href="https://placehold.co/1200x900/ff7043/ffffff?text=Brand+Promotions" target="_blank">Generate Image</a>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>📋 How to Use</h2>
+            <ol>
+                <li>Click on any "Generate Image" button above</li>
+                <li>A new tab will open with a placeholder image</li>
+                <li>Right-click on the image and select "Save image as..."</li>
+                <li>Save it to the <code>assets</code> folder with the correct filename:
+                    <ul>
+                        <li><code>profile.jpg</code> for profile picture</li>
+                        <li><code>project1.jpg</code> through <code>project6.jpg</code> for portfolio items</li>
+                    </ul>
+                </li>
+                <li>Repeat for all images you need</li>
+                <li>Open <code>index.html</code> in your browser to see your portfolio with placeholder images!</li>
+            </ol>
+        </div>
+        
+        <div class="alternatives">
+            <h2>🎨 Better Alternatives</h2>
+            <ul>
+                <li><a href="https://www.canva.com" target="_blank">Canva</a> - Create custom thumbnails with templates</li>
+                <li><a href="https://www.figma.com" target="_blank">Figma</a> - Design professional mockups</li>
+                <li><a href="https://unsplash.com" target="_blank">Unsplash</a> - Free high-quality stock photos</li>
+                <li><a href="https://www.pexels.com" target="_blank">Pexels</a> - Free stock videos and photos</li>
+                <li><strong>Use your actual work!</strong> - Replace placeholders with real project screenshots</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
